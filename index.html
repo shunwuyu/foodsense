@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>foodsense</title>
+    <style>
+    
+    html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        font-weight: inherit;
+        font-style: normal;
+        vertical-align: baseline;
+        background: transparent;
+        border: 0;
+        outline: 0;
+    }
+    article, aside, figure, figure img, hgroup, footer, header, nav, section {
+        display: block;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    a, a:link, a:visited {
+        text-decoration: none;
+        color: #34AC98;
+    }
+    textarea, select, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"]{
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+        background-color:#fff;
+        border:1px solid;
+        border-color:#848484;
+        color: #000;
+        outline:0;
+        padding: 2px 3px;
+        font-size: 13px;
+        font-family: sans-serif;
+        height:1.8em;
+    }
+    input, select {
+        vertical-align: middle;
+    }
+    input, button, select, textarea {
+        margin: 0;
+        vertical-align: middle;
+
+    }
+    html {
+        height:100%;
+    }
+    body {
+        width: 896px;
+        height: 100%;
+        min-height: 100%;
+        margin: 0 auto;
+        padding: 50px 48px 0;
+        line-height: 1;
+        color: #333;
+        background: #FFF;
+        font-family: ff-tisa-web-pro, Georgia, sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgb(239,248,247);
+    }
+    button, input[type="reset"], input[type="submit"], input[type="button"] {
+        -webkit-appearance: none;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding;
+        background-clip: padding-box;
+        background: #ddd url(http://foodsense.is/-/img/button.png) repeat-x;
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #ddd));
+        background: -moz-linear-gradient(top center, #fff 0%, #ddd 100%);
+        border: 1px solid;
+        border-color: #ddd #bbb #999;
+        cursor: pointer;
+        color: #333;
+        font: bold 12px/1.3 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+        outline: 0;
+        overflow: visible;
+        padding: 3px 10px;
+        text-shadow: #fff 0 1px 1px;
+        width: auto;
+    }
+    #wrap {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background: #fff;
+    }
+    header[role="masthead"] {
+        float:left;
+        width: 160px;
+        margin-bottom: 25px;
+    }
+    h1#branding {
+        display: block;
+        width: 120px;
+        height: 120px;
+        text-indent: -999em;
+        background:url('http://foodsense.is/-/img/food-sense.png') no-repeat 0 0;
+        transition: all .3s ease;
+    }
+    nav {
+        position: absolute;
+        top: 158px;
+        left: 0;
+        width: 160px;
+    }
+
+    nav li {
+        display: block;
+        margin-bottom: 18px;
+        line-height: 1.3em;
+    }
+    nav a {
+        display: block;
+        height: 28px;
+        line-height: 28px;
+        padding: 4px 0 0 44px;
+        font-style: italic;
+        color:#222;
+        transition: all .2s ease;
+    }
+    nav a:hover {
+        color: #EC6635;
+    }
+    nav li a:hover {
+        background-position: 5px 65%;
+    }
+    nav li a {
+        background-repeat: no-repeat;
+        background-position: 0 65%;
+    }
+    li#t-tastemakers a {
+        background-image: url(http://foodsense.is/-/img/nav-tastemakers.png);
+    }
+    li#t-blog a {
+        background-image: url(http://foodsense.is/-/img/nav-blog.png);
+    }
+    li#t-vendors a {
+        background-image: url(http://foodsense.is/-/img/nav-alist.png);
+    }
+    li#t-contribute a {
+        background-image: url(http://foodsense.is/-/img/nav-contribute.png);
+    }
+    li#t-about a {
+    background-image: url(http://foodsense.is/-/img/nav-about.png);
+    }
+    #content {
+        position: relative;
+        float: right;
+        width: 712px;
+    }
+    #newsletter {
+        overflow: hidden;
+        clear: both;
+        width: 100%;
+        min-height: 48px;
+        margin-bottom: 29px;
+        line-height: 1em;
+        border-top: 1px dashed #E5E5E5;
+        border-bottom: 1px dashed #E5E5E5;
+        background: url(http://foodsense.is/-/img/icon-mailinglist-32.png) no-repeat 18px 7px;
+    }
+    #newsletter p {
+        float:left;
+        width: 49%;
+        padding: 7px 24px 0 66px;
+        font-size: .75em;
+        font-style: italic;
+        padding-bottom: 10px;
+    }
+    #newsletter form {
+        float: left;
+        display: block;
+        margin-top: 11px;
+    }
+    #newsletter fieldset {
+        display: inline;
+    }
+    .hide {
+        display: none;
+    }
+    #newsletter input#email {
+        width: 160px;
+    }
+    #newsletter .submit {
+        margin-left: 10px;
+    }
+    /* PC */
+    @media only screen and (min-width:1176px) {
+        body {
+            width: 1080px;
+        }
+        #content {
+            float: right;
+            width: 896px;
+        }
+        #newsletter input#email {
+            width: 260px;
+        }
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2){
+        header h1#branding {
+            background-position: left bottom;
+            background-size: 120px auto;
+        }
+        #newsletter {
+            background-image: url(http://foodsense.is/-/img/icon-mailinglist-32-2x.png);
+            background-size: 32px auto;
+        }
+    }
+    /* ipad 竖拿 */
+    @media only screen and (max-width: 991px) and (min-width: 768px) {
+        body {
+            width: 712px;
+            padding: 20px 28px 0;
+        }
+        header[role="masthead"] {
+            width: 712px;
+            margin-bottom: 20px;
+        }
+        nav {
+            position: absolute;
+            top: 70px;
+            left: auto;
+            right: 0;
+            width: 528px;
+            margin:0;
+        }
+        nav ul {
+            float: right;
+        }
+        nav li {
+            display: inline-block;
+        }
+        nav a {
+            display: inline;
+            padding: 35px  15px 0 15px;
+        }
+        nav li a {
+            background-position: 50% 0;
+        }
+        nav li a:hover {
+            background-position: 50% 3px;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        header[role="masthead"] {
+            width: 100%;
+            margin: 69px 0 20px;
+        }   
+        body {
+            width: 320px;
+            padding: 0;
+        }
+        header h1#branding {
+            margin: 0 auto;
+        }
+        nav {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 49px;
+            font-size: .75em;
+            border-bottom: 1px solid #E5E5E5;
+            -webkit-box-shadow: 0 1px 0 #F5F5F5;
+            -moz-box-shadow: 0 1px 0 #F5F5F5;
+            box-shadow: 0 1px 0 #F5F5F5;
+        }
+        nav li {
+            display: inline;
+            margin: 0;
+        }
+        nav li#t-tastemakers a, nav li#t-blog a, nav li#t-vendors a, nav li#t-contribute a, nav li#t-about a {
+            background-image: none;
+        }
+        nav a {
+            float: left;
+            margin: 0;
+            padding: 16px 8px 6px;
+        }
+        #newsletter {
+            width: 100%;
+            height: 120px;
+            background-position: 15px 14px;
+        }
+        #newsletter p {
+            padding-bottom: 0;
+        }
+        #newsletter form {
+            margin-top: 15px;
+            padding-left: 15px;
+        }
+    }
+    @media only screen and (max-width: 767px) and (min-width: 480px) {
+        body {
+            width: 480px;
+            padding: 0;
+        }
+        header[role="masthead"] {
+            width: 100%;
+            margin: 20px 0;
+        }
+        header h1#branding {
+            margin-left: 20px;
+        }
+        nav {
+            top: 65px;
+            left: auto;
+            right: 25px;
+            width: 315px;
+            height: 20px;
+            font-size: .75em;
+            background: transparent;
+            border-bottom: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+        nav ul {
+            position: absolute;
+            right: 0;
+        }
+        nav li {
+            display: inline;
+            margin: 0;
+        }
+        nav a {
+            float: left;
+            margin: 0 0 0 4px;
+            padding: 5px 5px 0 5px;
+        }
+        #newsletter{
+            height: 105px;
+        }
+        #newsletter form input#email {
+            width: 300px;
+        }
+    }
+    
+    </style>
+</head>
+<body id="home-page">
+    <div id="wrap">
+        <header role="masthead">
+            <h1 id="branding">Food Sense</h1>
+            <nav>
+                <ul>
+                    <li id="t-tastemakers">
+                        <a href="#">Tastemakers</a>
+                    </li><li id="t-blog">
+                        <a href="#">Blog</a>
+                    </li><li id="t-vendors">
+                        <a href="#">The A-List</a>
+                    </li><li id="t-contribute">
+                        <a href="#">Contribute</a>
+                    </li><li id="t-about">
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            <section id="newsletter">
+                <p>
+                    Sign up for our newsletter to receive a handpicked selection of the best stories, recipes, and news, delivered weekly to your inbox.
+                </p>
+                <form 
+                method="post"
+                name="mc-embedded-subscribe-form"
+                action="http://thevegpost.us2.list-manage1.com/subscribe/post?u=be2c472e2e43f8735d9666407&id=83098190d4">
+                    <fieldset>
+                        <label for="email" class="hide">Email</label>
+                        <input type="email" id="email" name="EMAIL" placeholder="Email">
+                    </fieldset>
+                    <fieldset class="submit">
+                        <input type="submit" value="Subscribe" name="subscribe">
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
